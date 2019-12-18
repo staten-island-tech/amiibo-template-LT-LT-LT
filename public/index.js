@@ -17,7 +17,7 @@ app.get("/about/:id", async (req, res) => {
 res.render("index", {
   title: name
 });
-} catch{
+} catch (error) {
 res.status(500).send();
 }
 });
@@ -27,7 +27,12 @@ app.get("", async (req, res) => {
 res.render("index", {
   title: "First"
 });
-} catch{
+} catch (error) {
 res.status(500).send();
 }
+});
+
+app.listen(3000, () => {
+  console.log("Listening on port 3000");
+  console.log(__dirname)
 });
